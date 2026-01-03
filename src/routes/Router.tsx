@@ -1,0 +1,47 @@
+import {createBrowserRouter, Navigate } from "react-router-dom"
+import SignIn from "../pages/signin/Index"
+import SignUp from "../pages/signup/Index"
+import Layout from "../pages/shared/Layout"
+import ProtectedRoute from "../pages/shared/ProtectedRoute"
+import Dashboard from "../pages/dashboard/Index"
+import Projects from "../pages/projects/displayProjects/Index"
+import Members from "../pages/members/Index"
+
+const router = createBrowserRouter([
+    {
+        path : '/',
+        element : <Navigate to = '/account/projects' />
+    },
+    {
+        path : '/signin',
+        element : <SignIn />
+    },
+    {
+        path : '/signup',
+        element : <SignUp />
+    },
+    {
+        path : '/account',
+        element : <ProtectedRoute><Layout /></ProtectedRoute>,
+        children : [
+            {
+                index : true,
+                element : <Navigate to = 'projects' />,
+            },
+            {
+                path : 'dashboard',
+                element : <Dashboard />
+            },
+            {
+                path : 'projects',
+                element : <Projects />,
+            },
+            {
+                path : 'members',
+                element : <Members />,
+            }
+        ]
+    }
+])
+
+export default router

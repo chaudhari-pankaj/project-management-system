@@ -1,0 +1,22 @@
+body {
+    margin : 0px;
+    font-family: monospace;
+}
+a {
+    text-decoration: none;
+}
+#navbar a{
+    margin:0 0 0 2rem;
+    color : hsl(0,0%,100%)
+}
+#navbar a.active {
+    color : red;
+}
+
+button {
+    background-color: hsla(149, 60%, 30%, 1.00);
+    color : hsl(0,0%,100%);
+    border : none;
+    padding : 2px 5px 2px 5px;
+    margin : 0.75rem 0 0.75rem 0;
+}
