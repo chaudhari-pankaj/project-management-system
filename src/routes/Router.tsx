@@ -6,6 +6,8 @@ import ProtectedRoute from "../pages/shared/ProtectedRoute"
 import Dashboard from "../pages/dashboard/Index"
 import Projects from "../pages/projects/displayProjects/Index"
 import Members from "../pages/members/Index"
+import ProjectDetails from "../pages/projectdetails/Index"
+import NewTask from "../pages/tasks/NewTask"
 
 const router = createBrowserRouter([
     {
@@ -41,11 +43,8 @@ const router = createBrowserRouter([
                     },
                     {
                         path : ':projectID',
+                        element : <ProjectDetails />,
                         children : [
-                            {
-                                index : true,
-                                element : <>projectid</>,
-                            },
                             {
                                 path : 'tasks',
                                 children : [
@@ -55,7 +54,7 @@ const router = createBrowserRouter([
                                     },
                                     {
                                         path : 'newtask',
-                                        element : <>newtask</>
+                                        element : <NewTask />
                                     },
                                     {
                                         path : ':taskid',
@@ -72,7 +71,7 @@ const router = createBrowserRouter([
                 element : <Members />,
             }
         ]
-    }
-])
+    },
+]);
 
 export default router

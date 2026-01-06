@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom"
-import { Themecontext } from "../../context/theme";
+import { Themecontext } from "../../context/theme/Index";
 
 const Navbar = () => {
   
